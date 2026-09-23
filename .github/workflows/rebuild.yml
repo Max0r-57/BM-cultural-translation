@@ -1,0 +1,36 @@
+name: Rebuild translated pages
+
+# Regenerates index.html / enlightenment.html / africa.html whenever the
+# translation table (tools/trans.py) or the build script changes.
+on:
+  push:
+    paths:
+      - "tools/**"
+      - "source/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unpack original pages
+        run: |
+          mkdir -p "$RUNNER_TEMP/raw"
+          for f in source/*.zip; do unzip -oq "$f" -d "$RUNNER_TEMP/raw"; done
+      - name: Build
+        run: cd tools && python build.py "$RUNNER_TEMP/raw" ..
+      - name: Commit regenerated pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add -A index.html enlightenment.html africa.html galleries_files enlightenment_files africa_files
+          if git diff --cached --quiet; then echo "Nothing changed"; exit 0; fi
+          git commit -m "Rebuild pages from tools/trans.py"
+          git push

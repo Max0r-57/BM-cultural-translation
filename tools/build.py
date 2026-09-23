@@ -177,6 +177,7 @@ def build(src_name, out_name, folder):
 for p in PAGES:
     build(*p)
 if missing:
-    print("UNTRANSLATED:")
+    print("UNTRANSLATED (the English side of tools/trans.py must match the page text exactly):")
     for k, v in missing.items():
         print("  %r x%d" % (k, v))
+    sys.exit(1)

@@ -22,7 +22,14 @@ This is a personal translation project made by a college student who studies tra
 
 - `source/`：用浏览器“网页，全部”方式保存的英文原始网页（压缩包）。
 - `tools/trans.py`：英中对照译文表（全部译文都在这里，便于查阅和修改）。
-- `tools/build.py`：把译文替换进原始网页的脚本。修改译文后，将 `source/` 中的压缩包解压到某个目录，然后运行
-  `cd tools && python3 build.py <解压目录> ..` 即可重新生成页面。
+- `tools/build.py`：把译文替换进原始网页的脚本。
+
+## 如何校对和修改译文
+
+1. 在 GitHub 网页上打开 `tools/trans.py`，点右上角的铅笔图标进入编辑。
+2. 每行格式为 `"英文原文": "中文译文",`，**只改右边引号里的中文**，左边英文保持不动。
+3. 点 **Commit changes** 保存。GitHub Actions 会自动重新生成三个页面（约1分钟），可在 **Actions** 标签页查看进度；显示红叉说明格式有误，点进去可看到出错的行。
+
+注意：译文里需要引号时请用中文引号“”，不要用英文双引号 `"`；不要直接修改 `index.html` 等页面文件，否则下次自动生成时会被覆盖。
 
 内容版权归大英博物馆理事会所有（© The Trustees of the British Museum），本项目仅用于翻译课程学习。
