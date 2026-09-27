@@ -17,6 +17,7 @@ This is a personal translation project made by a college student who studies tra
 - 只替换文本（正文、标题、导航、按钮文字、图片替代文字、图片说明、灯箱说明等），HTML 结构、样式和脚本保持原样。
 - “第1展厅”“第25展厅”（以及指向这两个展厅的其他入口）链接到本站的译文页面，其余按钮和链接一律保留官网原链接。
 - 页面中已保存的图片存放在 `galleries_files/`、`enlightenment_files/`、`africa_files/` 文件夹中。
+- 页眉的英文标志替换为中文标志 `assets/logo-zh.png`（由 `tools/build.py` 自动替换）。
 
 ## 目录说明
 

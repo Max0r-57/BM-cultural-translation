@@ -163,6 +163,10 @@ def build(src_name, out_name, folder):
         return m.group(1) + url + m.group(3)
     doc = re.sub(r'(<a\b[^>]*?\shref=")([^"]*)(")', link, doc)
 
+    # --- Chinese logo in place of the English SVG wordmark
+    doc = re.sub(r'<img src="\./%s/british-museum-logo\.svg"([^>]*?) width="200" height="66"' % re.escape(folder),
+                 r'<img src="./assets/logo-zh.png"\1 width="200" height="44"', doc)
+
     # --- language + text
     doc = doc.replace('<html lang="en"', '<html lang="zh-CN"', 1)
     for a, b in RAW:
