@@ -77,9 +77,9 @@ T = {
 "Share using email": "通过电子邮件分享",
 "Share on WhatsApp": "分享到WhatsApp",
 "On this page": "本页内容",
-"Lower floor": "地下层",
-"Ground floor": "底层",
-"Upper floors": "楼上各层",
+"Lower floor": "负一楼",
+"Ground floor": "一楼",
+"Upper floors": "二楼",
 "Virtual galleries": "虚拟展厅",
 
 # ---------- galleries intro ----------
@@ -91,7 +91,7 @@ T = {
 "View the Museum map": "查看博物馆地图",
 "Explore more than 60 galleries at the British Museum from home.": "足不出户，探索大英博物馆的60多个展厅。",
 "Our gallery pages feature a range of exciting resources, including virtual tours with Google Street View, object highlights, timelines, family activities and facts.": "我们的展厅页面提供丰富精彩的资源，包括谷歌街景虚拟导览、重点展品、时间线、家庭活动以及趣味知识。",
-"Below you'll find a list of galleries on the lower floor, ground floor and upper floors, together with two galleries created especially for our online audience,": "下方列出了地下层、底层和楼上各层的展厅，以及两个专为线上观众打造的展厅：",
+"Below you'll find a list of galleries on the lower floor, ground floor and upper floors, together with two galleries created especially for our online audience,": "下方列出了负一楼、一楼和二楼的展厅，以及两个专为线上观众打造的展厅：",
 "Oceania": "大洋洲",
 "and": "和",
 "Prints and Drawings": "版画与素描",
